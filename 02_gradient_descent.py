@@ -31,7 +31,7 @@ def linear_gradient():
         grad_val = gradient(w, x_data, y_data)
         w = w - 0.01 * grad_val
         print('Epoch:', i, 'w=', w, 'loss=', cost_val)
-
+    print('forward(4)=', forward(w, 4))
     # 画图
     plt.plot(range(100), cost_list)
     plt.xlabel('epoch')
