@@ -23,16 +23,14 @@ def linear():
     w, b = np.meshgrid(W, B)
     l_sum = 0
     for x_val, y_val in zip(x_data, y_data):
-        y_pred_val = forward(w, b, x_val)
         loss_val = loss(w, b, x_val, y_val)
         l_sum += loss_val
-        print('\t', x_val, y_val, y_pred_val, loss_val)
     print('MSE', l_sum / 3)
 
     # 画图
     # https://matplotlib.org/stable/plot_types/3D/surface3d_simple.html
     fig = plt.figure()
-    ax = fig.add_subplot('2x+1', projection='3d')
+    ax = fig.add_subplot(111, projection='3d')
     ax.plot_surface(w, b, l_sum / 3)
     plt.show()
 
